@@ -23,7 +23,7 @@ jobs:
         rm -r /run/host${{ runner.tool_cache }}
 
     - name: Install needed packages
-      run: apt update && apt install debootstrap -y
+      run: apt update && apt install wget ar -y && apt install debootstrap -y
 
     - name: Build ISO
       run: ./build.sh etc/terraform.conf
